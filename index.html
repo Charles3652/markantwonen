@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Markant Wonen</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
+
+  <!-- Custom Tailwind Config (optioneel) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'markant-brown': '#9c8468',
+            'markant-dark': '#2f2f2f',
+            'markant-light': '#f3ede7',
+            'markant-beige': '#eae3db',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Arial', 'sans-serif'],
+            serif: ['Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; }
-    .logo-img { height: 54px; }
-    .dropdown { position: relative; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: #fff;
+      color: #2f2f2f;
+    }
+
+    .logo-img {
+      height: 54px;
+    }
+
+    /* Dropdown menu styling */
+    .dropdown {
+      position: relative;
+    }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -17,20 +56,23 @@
       top: 100%;
       min-width: 220px;
       background: #fff;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-radius: 0.5rem;
       z-index: 50;
-      margin-top: 0; /* Geen ruimte tussen hoofditem en submenu */
+      margin-top: 0;
     }
-    .dropdown:hover > .dropdown-content,
-    .dropdown:focus-within > .dropdown-content {
+
+    .dropdown:hover>.dropdown-content,
+    .dropdown:focus-within>.dropdown-content {
       display: block;
     }
-    .dropdown > a, .dropdown > button {
+
+    .dropdown>a,
+    .dropdown>button {
       display: inline-block;
       padding: 0.75rem 1rem;
-      /* Maak het hovergebied groter */
     }
+
     .dropdown-content a {
       display: block;
       padding: 0.5rem 1rem;
@@ -40,156 +82,221 @@
       transition: background 0.2s, color 0.2s;
       font-size: 1rem;
     }
+
     .dropdown-content a:hover,
     .dropdown-content a:focus {
       background: #f3f4f6;
       color: #b91c1c;
       outline: none;
     }
+
     @media (max-width: 900px) {
-      nav.menu-bar { flex-direction: column; gap: 0; }
-      .dropdown-content { position: static; box-shadow: none; margin-top: 0; border-radius: 0; min-width: 100%; }
-      .dropdown-content a { padding-left: 2rem; }
+      nav.menu-bar {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+        border-radius: 0;
+        min-width: 100%;
+      }
+
+      .dropdown-content a {
+        padding-left: 2rem;
+      }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
 
-<header class="bg-white shadow sticky top-0 z-30">
-  <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
-    <a href="/" class="flex items-center gap-3">
-      <img src="https://cdn.abacus.ai/images/612fd436-afc5-4726-83a2-1accac31beb7.png" alt="Markant Wonen logo" class="logo-img">
-    </a>
-    <nav class="menu-bar flex gap-8 font-medium items-center">
-      <div class="dropdown relative ml-10"> <!-- Extra marge links van het eerste item -->
-        <a href="/vloerbedekking.html" class="hover:text-red-700 transition focus:outline-none" tabindex="0">
-          Vloerbedekking
-        </a>
-        <div class="dropdown-content">
-          <a href="/vloerbedekking/laminaat.html">Laminaat</a>
-          <a href="/vloerbedekking/linoleum.html">Linoleum / Marmoleum</a>
-          <a href="/vloerbedekking/tapijten.html">Tapijten</a>
-          <a href="/vloerbedekking/parket.html">Parket</a>
-          <a href="/vloerbedekking/schoonloopmatten.html">Schoonloopmatten</a>
-          <a href="/vloerbedekking/traprenovatie.html">Traprenovatie</a>
-          <a href="/vloerbedekking/pvc.html">PVC-vloeren</a>
-          <a href="/vloerbedekking/vinyl.html">Vinyl-vloeren</a>
-          <a href="/vloerbedekking/vloerkleden.html">Vloerkleden</a>
-          <a href="/vloerbedekking/onderhoud.html">Onderhoudsmiddelen</a>
+<body class="bg-gray-50 text-gray-900" class="scroll-smooth">
+
+  <header class="bg-white shadow sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
+      <a href="/" class="flex items-center gap-3">
+        <img src="https://cdn.abacus.ai/images/612fd436-afc5-4726-83a2-1accac31beb7.png" alt="Markant Wonen logo" class="logo-img">
+      </a>
+      <nav class="menu-bar flex gap-8 font-medium items-center">
+        <div class="dropdown relative ml-10">
+          <!-- Extra marge links van het eerste item -->
+          <a href="/vloerbedekking.html" class="hover:text-red-700 transition focus:outline-none" tabindex="0">
+            Vloerbedekking
+          </a>
+          <div class="dropdown-content">
+            <a href="/vloerbedekking/laminaat.html">Laminaat</a>
+            <a href="/vloerbedekking/linoleum.html">Linoleum / Marmoleum</a>
+            <a href="/vloerbedekking/tapijten.html">Tapijten</a>
+            <a href="/vloerbedekking/parket.html">Parket</a>
+            <a href="/vloerbedekking/schoonloopmatten.html">Schoonloopmatten</a>
+            <a href="/vloerbedekking/traprenovatie.html">Traprenovatie</a>
+            <a href="/vloerbedekking/pvc.html">PVC-vloeren</a>
+            <a href="/vloerbedekking/vinyl.html">Vinyl-vloeren</a>
+            <a href="/vloerbedekking/vloerkleden.html">Vloerkleden</a>
+            <a href="/vloerbedekking/onderhoud.html">Onderhoudsmiddelen</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown relative">
-        <a href="/raambekleding.html" class="hover:text-red-700 transition focus:outline-none" tabindex="0">
-          Raambekleding
-        </a>
-        <div class="dropdown-content">
-          <a href="/raambekleding/gordijnen.html">Gordijnen</a>
-          <a href="/raambekleding/vitrages.html">Vitrages</a>
-          <a href="/raambekleding/duettes.html">Duettes</a>
-          <a href="/raambekleding/horizontale-jaloezieen.html">Horizontale Jaloezieën</a>
-          <a href="/raambekleding/rolgordijnen.html">Rolgordijnen</a>
-          <a href="/raambekleding/screens.html">Screens</a>
-          <a href="/raambekleding/shutters.html">Shutters</a>
-          <a href="/raambekleding/rails-roedes.html">Rails en Roedes</a>
+        <div class="dropdown relative">
+          <a href="/raambekleding.html" class="hover:text-red-700 transition focus:outline-none" tabindex="0">
+            Raambekleding
+          </a>
+          <div class="dropdown-content">
+            <a href="/raambekleding/gordijnen.html">Gordijnen</a>
+            <a href="/raambekleding/vitrages.html">Vitrages</a>
+            <a href="/raambekleding/duettes.html">Duettes</a>
+            <a href="/raambekleding/horizontale-jaloezieen.html">Horizontale Jaloezieën</a>
+            <a href="/raambekleding/rolgordijnen.html">Rolgordijnen</a>
+            <a href="/raambekleding/screens.html">Screens</a>
+            <a href="/raambekleding/shutters.html">Shutters</a>
+            <a href="/raambekleding/rails-roedes.html">Rails en Roedes</a>
+          </div>
         </div>
-      </div>
-    
-      <a href="/offerte.html" class="hover:text-red-700 transition">Offerte</a>
-      <a href="/afspraak.html" class="hover:text-red-700 transition">Afspraak</a>
-      <a href="/contact.html" class="hover:text-red-700 transition">Contact</a>
-    </nav>
-</nav>
-<form action="https://www.google.com/search" method="GET" class="hidden md:flex items-center gap-4 ml-8">
-  <input
-    name="q"
-    class="border rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-red-700"
-    type="text"
-    placeholder="Zoeken...">
-  <input type="hidden" name="sitesearch" value="markantwonen.nl">
-  <button type="submit" class="ml-2 px-3 py-1 rounded-full bg-green-700 text-white hover:bg-red-800 transition">Zoek</button>
-</form>
-  </div>
-</header>
 
-<script>
-  // Zorgt dat slechts één dropdown tegelijk open is, en sluit bij klik buiten menu
-  document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    const buttons = document.querySelectorAll('.dropdown > button');
+        <a href="/offerte.html" class="hover:text-red-700 transition">Offerte</a>
+        <a href="/afspraak.html" class="hover:text-red-700 transition">Afspraak</a>
+        <a href="/contact.html" class="hover:text-red-700 transition">Contact</a>
+      </nav>
+      </nav>
+      <form action="https://www.google.com/search" method="GET" class="hidden md:flex items-center gap-4 ml-8">
+        <input name="q" class="border rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-red-700" type="text" placeholder="Zoeken...">
+        <input type="hidden" name="sitesearch" value="markantwonen.nl">
+        <button type="submit" class="ml-2 px-3 py-1 rounded-full bg-green-700 text-white hover:bg-red-800 transition">Zoek</button>
+      </form>
+    </div>
+  </header>
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        // Sluit alle andere dropdowns
+  <script>
+    // Zorgt dat slechts één dropdown tegelijk open is, en sluit bij klik buiten menu
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.queOverrySelectorAll('.dropdown');
+      const buttons = document.querySelectorAll('.dropdown > button');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          // Sluit alle andere dropdowns
+          dropdowns.forEach(drop => drop.classList.remove('open'));
+          // Toggle deze dropdown
+          btn.parentElement.classList.toggle('open');
+        });
+      });
+      // Sluit alle dropdowns bij klik buiten menu
+      document.addEventListener('click', function(e) {
         dropdowns.forEach(drop => drop.classList.remove('open'));
-        // Toggle deze dropdown
-        btn.parentElement.classList.toggle('open');
+      });
+      // Optioneel: sluit dropdown bij tabben uit menu
+      dropdowns.forEach(drop => {
+        drop.addEventListener('focusout', function(e) {
+          // Als focus naar buiten de dropdown gaat, sluit hem
+          if (!drop.contains(e.relatedTarget)) {
+            drop.classList.remove('open');
+          }
+        });
       });
     });
-
-    // Sluit alle dropdowns bij klik buiten menu
-    document.addEventListener('click', function(e) {
-      dropdowns.forEach(drop => drop.classList.remove('open'));
-    });
-
-    // Optioneel: sluit dropdown bij tabben uit menu
-    dropdowns.forEach(drop => {
-      drop.addEventListener('focusout', function(e) {
-        // Als focus naar buiten de dropdown gaat, sluit hem
-        if (!drop.contains(e.relatedTarget)) {
-          drop.classList.remove('open');
-        }
-      });
-    });
-  });
-</script>
-
-  <!-- Header/Navbar -->
-
+  </script>
 
   <!-- Hero Section -->
-  <section class="relative bg-gray-100">
-    <img src="https://cdn.abacus.ai/images/8b808d2e-446d-4164-b6a7-cfa762c61cc2.png" alt="Hero" class="w-full h-96 object-cover object-center opacity-80">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-red-900 drop-shadow mb-4">Van idee tot interieur—wij begeleiden u bij elke stap</h1>
-      <p class="text-lg md:text-2xl text-red-800 mb-4">Persoonlijk advies en producten van topkwaliteit, afgestemd op uw woonwensen.</p>
-      <a href="#categories" class="bg-green-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow hover:bg-red-800 transition">Ontdek onze collectie</a>
+  <section class="relative bg-cover bg-center bg-no-repeat py-12" style="background-image: url('https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white/70 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#9c8468] drop-shadow mb-4">
+          Van idee tot interieur—wij begeleiden u bij elke stap
+        </h1>
+        <p class="text-lg md:text-2xl font-bold text-[#9c8468] mb-4">
+          Persoonlijk advies en producten van topkwaliteit, afgestemd op uw woonwensen.
+        </p>
+      </div>
     </div>
   </section>
 
+  <section id="about" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Tekstgedeelte -->
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl font-bold mb-6 text-[#000000]">Over Markant Wonen</h2>
+          <p class="text-lg mb-6">
+            Al meer dan 40 jaar is Markant Wonen een begrip in Hengelo (O) en omstreken.
+            In onze showroom van ruim 1000 m² vindt u een uitgebreid assortiment aan vloerbekleding en raambekleding,
+            passend bij iedere woonstijl — van klassiek tot modern.
+          </p>
+          <p class="text-lg mb-6">
+            Bij Markant Wonen vindt u alles voor de perfecte basis van uw interieur.
+            Van laminaat, pvc en tapijt tot gordijnen, jaloezieën en rolgordijnen — volledig op maat gemaakt.
+            Onze ervaren interieuradviseurs staan klaar om u te helpen bij het maken van de juiste keuzes.
+          </p>
+          <p class="text-lg mb-6">
+            Onze passie voor woninginrichting vertaalt zich in een zorgvuldige selectie van materialen,
+            deskundig advies en een vakkundige plaatsing. Wij zorgen ervoor dat uw woning perfect afgewerkt wordt,
+            precies zoals u het voor ogen heeft.
+          </p>
+          <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-lg font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+            Bekijk onze diensten
+          </a>
+        </div>
+
+        <!-- Afbeelding en badge -->
+        <div class="order-1 lg:order-2">
+          <div class="relative">
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Elegant Interior" class="w-full h-[500px] object-cover object-center" />
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-[#f5f0e6] rounded-xl p-6 shadow-xl max-w-xs">
+              <p class="font-serif text-xl mb-2">40+ Jaar Ervaring</p>
+              <p class="text-[#333333cc]">
+                Deskundig advies en vakmanschap sinds meer dan vier decennia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
   <!-- Categorieën-sectie (Tailwind) -->
-  <section class="py-16 bg-white font-sans" id="categories">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 tracking-tight">
-        Onze Hoofdcategorieën
+  <section class="py-16 bg-[#F5F2EE] font-sans" id="categories">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-center text-markant-dark mb-4">
+        Onze Collecties
       </h2>
+      <br>
+
+      <!-- Flex container voor beide kaarten -->
       <div class="flex flex-col md:flex-row md:justify-center md:gap-8 gap-10">
+
         <!-- Vloerbedekking Card -->
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-w-xl w-full mx-auto">
-          <div class="relative h-72">
-            <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&w=800&q=80" alt="Vloerbedekking" class="w-full h-full object-cover object-center" />
+        <div class="group bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-w-xl w-full mx-auto">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=modern%2520flooring%2520options%2520displayed%2520in%2520a%2520stylish%2520showroom%252C%2520featuring%2520various%2520types%2520of%2520hardwood%252C%2520laminate%252C%2520vinyl%252C%2520and%2520carpet%2520samples%2520arranged%2520in%2520an%2520elegant%2520display%252C%2520clean%2520modern%2520interior%252C%2520soft%2520lighting%252C%2520minimalist%2520design&width=800&height=600&seq=flooring-category&orientation=landscape" alt="Vloerbedekking" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 flex-1 flex flex-col">
             <h3 class="text-2xl font-bold mb-2 text-gray-900">Vloerbedekking</h3>
             <p class="text-gray-600 mb-5 min-h-[64px]">
               Van luxe tapijten tot duurzame laminaatvloeren, wij bieden een breed assortiment vloerbedekkingen voor elke ruimte en stijl.
             </p>
-           <div class="flex flex-wrap gap-2 mb-7">
-              <a href="#tapijt" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Tapijt</a>
-              <a href="#laminaat" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Laminaat</a>
-              <a href="#pvc" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">PVC</a>
-              <a href="#parket" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Parket</a>
-              <a href="#vinyl" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Vinyl</a>
+            <div class="flex flex-wrap gap-2 mb-7">
+              <a href="#tapijt" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Tapijt</a>
+              <a href="#laminaat" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Laminaat</a>
+              <a href="#pvc" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">PVC</a>
+              <a href="#parket" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Parket</a>
+              <a href="#vinyl" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Vinyl</a>
             </div>
+
             <div class="mt-auto pt-2">
-              <a href="#" class="inline-block bg-green-700 hover:bg-red-800 text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base" style="padding-left:1.5rem;padding-right:1.5rem;">Bekijk collectie</a>
+              <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+                Bekijk collectie
+              </a>
+
             </div>
           </div>
         </div>
+
         <!-- Raambekleding Card -->
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-w-xl w-full mx-auto">
-          <div class="relative h-72">
-            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&w=800&q=80" alt="Raambekleding" class="w-full h-full object-cover object-center" />
+        <div class="group bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-w-xl w-full mx-auto">
+          <div class="relative h-72 overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=elegant%2520window%2520treatments%2520display%2520in%2520a%2520modern%2520showroom%252C%2520featuring%2520various%2520types%2520of%2520blinds%252C%2520curtains%252C%2520shutters%2520and%2520shades%2520in%2520different%2520colors%2520and%2520materials%252C%2520clean%2520modern%2520interior%252C%2520soft%2520lighting%252C%2520minimalist%2520design&width=800&height=600&seq=window-category&orientation=landscape" alt="Raambekleding" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 flex-1 flex flex-col">
             <h3 class="text-2xl font-bold mb-2 text-gray-900">Raambekleding</h3>
@@ -197,173 +304,188 @@
               Creëer de perfecte sfeer met onze stijlvolle raambekledingsopties, van elegante gordijnen tot praktische jaloezieën en alles daartussenin.
             </p>
             <div class="flex flex-wrap gap-2 mb-7">
-              <a href="#gordijnen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Gordijnen</a>
-              <a href="#jaloezieen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Jaloezieën</a>
-              <a href="#rolgordijnen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Rolgordijnen</a>
-              <a href="#plisse" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Plissé</a>
-              <a href="#shutters" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-green-700 hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700">Shutters</a>
+              <a href="#gordijnen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Gordijnen</a>
+              <a href="#jaloezieen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Jaloezieën</a>
+              <a href="#rolgordijnen" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Rolgordijnen</a>
+              <a href="#plisse" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Plissé</a>
+              <a href="#shutters" class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#9c8468] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#9c8468]">Shutters</a>
             </div>
+
             <div class="mt-auto pt-2">
-              <a href="#" class="inline-block bg-green-700 hover:bg-red-800 text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base" style="padding-left:1.5rem;padding-right:1.5rem;">Bekijk collectie</a>
+              <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+                Bekijk collectie
+              </a>
+
             </div>
+          </div>
+        </div>
+
+      </div> <!-- Einde flex container -->
+    </div>
+  </section>
+
+  <section id="services" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif text-center text-markant-dark mb-4">Onze Diensten</h2>
+      <p class="text-center max-w-2xl mx-auto text-markant-dark/80 mb-12">
+        Bij Markant Wonen gaat het niet alleen om prachtige materialen en accessoires,
+        maar ook om uitstekende service en expertise.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Interieuradvies -->
+        <div class="bg-markant-light p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="mb-4">
+            <!-- Liniaal -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-markant-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 21l18-18M14 3l7 7M3 14l7 7M8.5 8.5l7 7M12 5l7 7M5 12l7 7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif text-markant-dark mb-3">Interieuradvies</h3>
+          <p class="text-markant-dark/80">
+            Onze vakkundige interieuradviseurs helpen u graag bij het maken van de juiste keuzes voor uw interieur.
+          </p>
+        </div>
+
+        <!-- Stoffering -->
+        <div class="bg-markant-light p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="mb-4">
+            <!-- Verfkwast -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-markant-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14l-7 7-4-4 7-7m3-3a2.121 2.121 0 0 0-3 0L12 8l4 4 3-3a2.121 2.121 0 0 0 0-3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif text-markant-dark mb-3">Stoffering</h3>
+          <p class="text-markant-dark/80">
+            Van gordijnen en behang tot vloeren en raamdecoratie; wij hebben alles om uw woning compleet te maken.
+          </p>
+        </div>
+
+        <!-- Bezorging & Montage -->
+        <div class="bg-markant-light p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="mb-4">
+            <!-- Vrachtwagen -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-markant-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 7h13v10H3zM16 10h4l2 3v4h-6zM6 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif text-markant-dark mb-3">Bezorging & Montage</h3>
+          <p class="text-markant-dark/80">
+            We kunnen uw aankopen vakkundig bezorgen en monteren, zodat u er direct van kunt genieten.
+          </p>
+        </div>
+
+        <!-- Totaalinrichting -->
+        <div class="bg-markant-light p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="mb-4">
+            <!-- Huis -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-markant-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2V10z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-serif text-markant-dark mb-3">Totaalinrichting</h3>
+          <p class="text-markant-dark/80">
+            Laat de complete inrichting van uw woning aan ons over, van ontwerp tot realisatie.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Onderste call-to-action -->
+      <div class="mt-16 bg-markant-beige rounded-xl p-8 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-serif text-markant-dark mb-4">
+              Persoonlijk interieuradvies
+            </h3>
+            <p class="text-markant-dark/80 mb-6">
+              Onze interieuradviseurs denken graag met u mee over de inrichting van uw woning.
+              Op basis van uw wensen en budget stellen we een persoonlijk advies op.
+            </p>
+            <a href="#contact" class="bg-[#9c8468] text-white font-semibold py-3 px-6 rounded-lg inline-block hover:bg-[#8b745d] transition">
+              Maak een afspraak
+            </a>
+          </div>
+          <div class="rounded-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interieuradvies" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="py-16 bg-gray-50 font-sans" id="collectie">
+
+  <!-- Populaire vloerbedekking-->
+
+  <section class="py-16 bg-[#F5F2EE] font-sans" id="collectie">
+
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 tracking-tight">
+      <h2 class="text-3xl font-serif font-bold text-center text-markant-dark mb-4">
         Populaire Vloerbedekking
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
+      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+        Ontdek onze meest geliefde vloerbedekkingen die comfort en stijl combineren voor elk interieur
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 group">
+
+        <!-- Card 1: Laminaat -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&w=600&q=80" alt="Laminaat" class="w-full h-40 object-cover object-center">
+          <div class="overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=close-up%2520of%2520light%2520oak%2520laminate%2520flooring%2520with%2520natural%2520wood%2520grain%2520pattern%252C%2520warm%2520tones%252C%2520clean%2520modern%2520finish%252C%2520high-quality%2520detailed%2520texture%252C%2520professional%2520product%2520photography%2520on%2520white%2520background&width=500&height=500&seq=laminate-1&orientation=squarish" alt="Premium Eiken Laminaat" class="w-full h-60 object-cover object-top transform transition-transform duration-500 hover:scale-105">
+          </div>
           <div class="p-5 flex-1 flex flex-col">
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Laminaat</h3>
             <p class="text-gray-600 text-sm mb-4 flex-1">
               Stijlvol, duurzaam en eenvoudig te onderhouden. Ontdek onze uitgebreide laminaatcollectie.
             </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
           </div>
         </div>
-        <!-- Card 2 -->
+
+        <!-- Card 2: Tapijt -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&w=600&q=80" alt="Gordijnen" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Gordijnen</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Creëer sfeer en privacy met onze elegante gordijnen, op maat gemaakt voor elk interieur.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
+          <div class="overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=close-up%2520of%2520soft%2520plush%2520carpet%2520in%2520light%2520gray%2520color%252C%2520showing%2520thick%2520pile%2520texture%252C%2520luxurious%2520feel%252C%2520high-quality%2520detailed%2520texture%252C%2520professional%2520product%2520photography%2520on%2520white%2520background&width=500&height=500&seq=carpet-1&orientation=squarish" alt="Luxe Hoogpolig Tapijt" class="w-full h-60 object-cover object-center transform transition-transform duration-500 hover:scale-105">
           </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&w=600&q=80" alt="PVC-vloeren" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">PVC-vloeren</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Waterbestendig, geluiddempend en modern. Ideaal voor elke ruimte in huis.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&w=600&q=80" alt="Tapijt" class="w-full h-40 object-cover object-center">
           <div class="p-5 flex-1 flex flex-col">
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Tapijt</h3>
             <p class="text-gray-600 text-sm mb-4 flex-1">
               Heerlijk zacht en warm aan de voeten. Tapijt voor comfort en luxe in elke kamer.
             </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
           </div>
         </div>
-        <!-- Card 5 -->
+
+        <!-- Card 3: PVC-vloeren -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1571461/pexels-photo-1571461.jpeg?auto=compress&w=600&q=80" alt="Jaloezieën" class="w-full h-40 object-cover object-center">
+          <div class="overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=close-up%2520of%2520dark%2520walnut%2520hardwood%2520flooring%2520with%2520rich%2520wood%2520grain%2520pattern%252C%2520warm%2520brown%2520tones%252C%2520polished%2520finish%252C%2520high-quality%2520detailed%2520texture%252C%2520professional%2520product%2520photography%2520on%2520white%2520background&width=500&height=500&seq=hardwood-1&orientation=squarish" alt="Massief Noten Parket" class="w-full h-60 object-cover object-center transform transition-transform duration-500 hover:scale-105">
+          </div>
           <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Jaloezieën</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">PVC-vloeren</h3>
             <p class="text-gray-600 text-sm mb-4 flex-1">
-              Strak, functioneel en stijlvol. Jaloezieën voor optimale lichtregulering.
+              Waterbestendig, geluiddempend en modern. Ideaal voor elke ruimte in huis.
             </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
           </div>
         </div>
-        <!-- Card 6 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&w=600&q=80" alt="Vinyl" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Vinyl</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Praktisch, betaalbaar en in vele dessins. Vinylvloeren voor elk budget.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
-  <section class="py-16 bg-gray-50 font-sans" id="raambekleding-collectie">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 tracking-tight">
-        Populaire Raambekleding
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&w=600&q=80" alt="Gordijnen" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Gordijnen</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Sfeervol, isolerend en op maat gemaakt. Kies uit talloze stoffen en kleuren.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&w=600&q=80" alt="Rolgordijnen" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Rolgordijnen</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Strak, functioneel en in vele kleuren. Ideaal voor privacy en lichtregulering.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&w=600&q=80" alt="Plissé" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Plissé</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Modern en veelzijdig. Plissé voor een unieke lichtinval en sfeer in huis.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1571461/pexels-photo-1571461.jpeg?auto=compress&w=600&q=80" alt="Jaloezieën" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Jaloezieën</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Tijdloos en stijlvol. Jaloezieën voor optimale controle over licht en privacy.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&w=600&q=80" alt="Shutters" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Shutters</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Luxe en karakteristiek. Shutters geven elke ruimte een exclusieve uitstraling.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-        <!-- Card 6 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
-          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&w=600&q=80" alt="Vitrages" class="w-full h-40 object-cover object-center">
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">Vitrages</h3>
-            <p class="text-gray-600 text-sm mb-4 flex-1">
-              Luchtig en lichtdoorlatend. Vitrages zorgen voor een elegante afwerking van je ramen.
-            </p>
-            <a href="#" class="mt-auto inline-block text-red-700 font-medium hover:underline transition">Bekijk collectie</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="py-16 bg-[#f7f3ef] font-sans">
+
+  <!-- Waarom kiezen voor onze vloer- en raambekleding -->
+  <section class="py-16 bg-[#ffffff] font-sans">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
+
         <!-- Linkerkolom: tekst en USP's -->
         <div>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
@@ -372,12 +494,13 @@
           <p class="text-gray-700 mb-8 max-w-xl">
             Bij Markant Wonen profiteer je van een breed assortiment, deskundig advies en maatwerkoplossingen voor elk interieur. Onze producten zijn zorgvuldig geselecteerd op kwaliteit, duurzaamheid en stijl. Ontdek het verschil van persoonlijke service en vakmanschap!
           </p>
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
             <!-- USP 1 -->
             <div class="flex items-start gap-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">
-                <!-- Voorbeeld: checkmark icoon -->
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#e0d7ce]">
+                <svg class="w-6 h-6 text-[#9c8468]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </span>
@@ -386,11 +509,11 @@
                 <p class="text-gray-600 text-sm">Altijd persoonlijk en op maat.</p>
               </div>
             </div>
+
             <!-- USP 2 -->
             <div class="flex items-start gap-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">
-                <!-- Voorbeeld: layers icoon -->
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#e0d7ce]">
+                <svg class="w-6 h-6 text-[#9c8468]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4l8 4-8 4-8-4 8-4zm0 12l8-4-8-4-8 4 8 4zm0 0v4" />
                 </svg>
               </span>
@@ -399,11 +522,11 @@
                 <p class="text-gray-600 text-sm">Voor elke woonstijl en elk budget.</p>
               </div>
             </div>
+
             <!-- USP 3 -->
             <div class="flex items-start gap-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">
-                <!-- Voorbeeld: wrench icoon -->
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#e0d7ce]">
+                <svg class="w-6 h-6 text-[#9c8468]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6 6M7.5 7.5l9 9" />
                 </svg>
               </span>
@@ -412,11 +535,11 @@
                 <p class="text-gray-600 text-sm">Van inmeten tot vakkundige plaatsing.</p>
               </div>
             </div>
+
             <!-- USP 4 -->
             <div class="flex items-start gap-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100">
-                <!-- Voorbeeld: shield-check icoon -->
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#e0d7ce]">
+                <svg class="w-6 h-6 text-[#9c8468]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4l7 4v4c0 5-7 8-7 8s-7-3-7-8V8l7-4zm0 0v8" />
                 </svg>
               </span>
@@ -425,324 +548,451 @@
                 <p class="text-gray-600 text-sm">Altijd zeker van topkwaliteit.</p>
               </div>
             </div>
+
           </div>
         </div>
+
         <!-- Rechterkolom: afbeelding -->
         <div class="flex justify-center">
-          <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&w=600&q=80" alt="Waarom kiezen voor Markant Wonen" class="rounded-2xl shadow-lg w-full max-w-md object-cover object-center">
+          <img src="https://readdy.ai/api/search-image?query=interior%2520designer%2520consulting%2520with%2520client%2520in%2520a%2520modern%2520showroom%252C%2520looking%2520at%2520flooring%2520and%2520window%2520treatment%2520samples%252C%2520professional%2520setting%252C%2520warm%2520lighting%252C%2520elegant%2520display%2520of%2520materials%252C%2520high-end%2520interior&width=800&height=600&seq=consultation&orientation=landscape" alt="Persoonlijk advies" class="w-full h-full object-cover" />
         </div>
+
       </div>
     </div>
   </section>
 
- <section class="py-16 bg-white font-sans" id="reviews">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 tracking-tight">
-      Wat onze klanten zeggen
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Review 1 -->
-      <div class="bg-gray-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-blue-200">
-        <div class="flex items-center justify-center mb-2">
-          <!-- 5 sterren -->
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-        </div>
-        <p class="text-gray-700 mb-4 italic">
-          “Super service en prachtig resultaat! De vloer is vakkundig gelegd en het advies in de winkel was top.”
-        </p>
-        <div class="font-semibold text-gray-900">Sanne de Vries</div>
-        <div class="text-gray-500 text-sm">Enschede</div>
-      </div>
-      <!-- Review 2 -->
-      <div class="bg-gray-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-blue-200">
-        <div class="flex items-center justify-center mb-2">
-          <!-- 5 sterren -->
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-        </div>
-        <p class="text-gray-700 mb-4 italic">
-          “Heel blij met onze nieuwe raambekleding. Snel geleverd en perfect gemonteerd. Aanrader!”
-        </p><br>
-        <div class="font-semibold text-gray-900">Jan Peters</div>
-        <div class="text-gray-500 text-sm">Hengelo</div>
-      </div>
-      <!-- Review 3 -->
-      <div class="bg-gray-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
-        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-blue-200">
-        <div class="flex items-center justify-center mb-2">
-          <!-- 5 sterren -->
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-        </div>
-        <p class="text-gray-700 mb-4 italic">
-          “Het team dacht echt mee en alles werd netjes afgewerkt. We zijn ontzettend blij met het resultaat!”
-        </p>
-        <div class="font-semibold text-gray-900">Marieke van Dijk</div>
-        <div class="text-gray-500 text-sm">Almelo</div>
-      </div>
-      <!-- Review 4 -->
-      <div class="bg-gray-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
-        <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-blue-200">
-        <div class="flex items-center justify-center mb-2">
-          <!-- 5 sterren -->
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6 "/></svg>
-        </div>
-        <p class="text-gray-700 mb-4 italic">
-          “Goede communicatie en snelle levering. De monteurs waren vriendelijk en professioneel.”
-        </p><br>
-        <div class="font-semibold text-gray-900">Erik Jansen</div>
-        <div class="text-gray-500 text-sm">Hengelo</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="py-16 bg-[#F5F2EE] font-sans" id="raambekleding-collectie">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-markant-dark tracking-tight">
+        Populaire Raambekleding
+      </h2>
 
-<section class="py-16 bg-[#f7f3ef] font-sans" id="contact">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 tracking-tight">
-      Neem contact op
-    </h2>
-    <div class="bg-white rounded-xl shadow-md p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
-      <!-- Linkerkant: tekst -->
-      <div class="flex-1 mb-8 md:mb-0">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Heb je een vraag of wil je een afspraak maken?</h3>
-        <p class="text-gray-700 mb-4">
-          Vul het formulier in en wij nemen zo snel mogelijk contact met je op. Je kunt ons ook direct mailen via <a href="mailto:info@markantwonen.nl" class="text-blue-700 underline">info@markantwonen.nl</a><br> of bellen op <a href="tel:074 291 11 99" class="text-blue-700 underline">074 291 11 99</a>.
-        </p>
-        <ul class="text-gray-600 text-sm space-y-2">
-          <li><span class="font-semibold text-blue-700">Adres:</span><br> Beitelstraat 17<br>
-7556 ND Hengelo (O)</li>
-          <li><span class="font-semibold text-blue-700">Openingstijden:</span><br>
-Maandag: 13.00 - 18.00 uur<br>
-Di t/m Vrij: 09.30 - 18.00 uur<br>
-Zaterdag: 10.00 - 17.00 uur<br>
-  Zondag: gesloten<br>
-</li>
-        </ul>
-      </div>
-      <!-- Rechterkant: formulier -->
-      <form action="https://formspree.io/f/yourformid" method="POST" class="flex-1 w-full max-w-md space-y-5">
-        <div>
-          <label for="naam" class="block text-gray-800 font-medium mb-1">Naam</label>
-          <input type="text" id="naam" name="naam" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 transition" autocomplete="name">
-        </div>
-        <div>
-          <label for="email" class="block text-gray-800 font-medium mb-1">E-mail <span class="text-red-600">*</span></label>
-          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 transition" autocomplete="email">
-        </div>
-        <div>
-          <label for="bericht" class="block text-gray-800 font-medium mb-1">Bericht</label>
-          <textarea id="bericht" name="bericht" rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 transition"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-green-700 text-white font-semibold py-2 rounded-lg hover:bg-red-800 transition">
-          Verstuur bericht
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-<section class="py-16 bg-white font-sans" id="faq">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-900 tracking-tight">
-      Veelgestelde vragen
-    </h2>
-    <div class="space-y-4">
-      <!-- Vraag 1: standaard open -->
-      <div class="border border-gray-200 rounded-lg overflow-hidden">
-        <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="true" onclick="toggleFaq(0)">
-          <span class="font-semibold text-gray-900">Hoe kan ik een offerte aanvragen?</span>
-          <svg class="w-5 h-5 text-blue-700 transform rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="px-6 pb-4 text-gray-700 block" id="faq-answer-0">
-          Je kunt eenvoudig een offerte aanvragen via het formulier op onze website of door contact op te nemen met onze winkel. Wij nemen zo snel mogelijk contact met je op om je wensen te bespreken.
+        <!-- Card 1: Gordijnen -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
+          <div class="overflow-hidden">
+            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&w=600&q=80" alt="Gordijnen" class="w-full h-60 object-cover object-center transform transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Gordijnen</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">
+              Sfeervol, isolerend en op maat gemaakt. Kies uit talloze stoffen en kleuren.
+            </p>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
+          </div>
         </div>
-      </div>
-      <!-- Vraag 2 -->
-      <div class="border border-gray-200 rounded-lg overflow-hidden">
-        <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(1)">
-          <span class="font-semibold text-gray-900">Bieden jullie ook inmeetservice aan?</span>
-          <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-1">
-          Ja, wij bieden een professionele inmeetservice aan. Onze specialisten komen bij je langs om alles nauwkeurig op te meten voor een perfect eindresultaat.
+
+        <!-- Card 2: Rolgordijnen -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
+          <div class="overflow-hidden">
+            <img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&w=600&q=80" alt="Rolgordijnen" class="w-full h-60 object-cover object-center transform transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Rolgordijnen</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">
+              Strak, functioneel en in vele kleuren. Ideaal voor privacy en lichtregulering.
+            </p>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
+          </div>
         </div>
-      </div>
-      <!-- Vraag 3 -->
-      <div class="border border-gray-200 rounded-lg overflow-hidden">
-        <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(2)">
-          <span class="font-semibold text-gray-900">Wat is de levertijd van mijn bestelling?</span>
-          <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-2">
-          De levertijd verschilt per product. Wij informeren je altijd vooraf over de verwachte levertijd en houden je op de hoogte van de status van je bestelling.
+
+        <!-- Card 3: Plissé -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition">
+          <div class="overflow-hidden">
+            <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&w=600&q=80" alt="Plissé" class="w-full h-60 object-cover object-center transform transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Plissé</h3>
+            <p class="text-gray-600 text-sm mb-4 flex-1">
+              Modern en veelzijdig. Plissé voor een unieke lichtinval en sfeer in huis.
+            </p>
+            <a href="#" class="bg-[#9c8468] hover:bg-[#7d6a52] text-white px-6 py-2 rounded-full font-semibold shadow transition w-auto min-w-[120px] max-w-[180px] text-center text-base">
+              Bekijk collectie
+            </a>
+          </div>
         </div>
+
       </div>
-      <!-- Vraag 4 -->
-      <div class="border border-gray-200 rounded-lg overflow-hidden">
-        <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(3)">
-          <span class="font-semibold text-gray-900">Kan ik stalen aanvragen?</span>
-          <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-3">
-          Zeker! Je kunt gratis stalen aanvragen van onze vloer- en raambekleding, zodat je thuis rustig kunt vergelijken.
+    </div>
+  </section>
+  <!-- Wat onze klanten zeggen -->
+  <section class="py-16 bg-[#00000] font-sans" id="reviews">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-serif text-center mb-12 text-markant-dark tracking-tight">
+        Wat onze klanten zeggen
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Review 1 -->
+        <div class="bg-[#F5F2EE]  rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-[#9C8468]">
+          <div class="flex items-center justify-center mb-2">
+            <!-- 5 sterren -->
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            “Super service en prachtig resultaat! De vloer is vakkundig gelegd en het advies in de winkel was top.”
+          </p>
+          <div class="font-semibold text-markant-dark">Sanne de Vries</div>
+          <div class="text-gray-500 text-sm">Enschede</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-[#F5F2EE]
+ rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-[#9C8468]">
+
+          <div class="flex items-center justify-center mb-2">
+            <!-- 5 sterren -->
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+            </svg>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            “Heel blij met onze nieuwe raambekleding. Snel geleverd en perfect gemonteerd. Aanrader!”
+          </p>
+          <div class="font-semibold text-markant-dark">Jan Peters</div>
+          <div class="text-gray-500 text-sm">Hengelo</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-[#F5F2EE]
+rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-[#9C8468]">
+          <div class="flex items-center justify-center mb-2">
+            <div class="flex items-center justify-center mb-2">
+              <!-- 5 sterren -->
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            “Het team dacht echt mee en alles werd netjes afgewerkt. We zijn ontzettend blij met het resultaat!”
+          </p>
+          <div class="font-semibold text-markant-dark">Marieke van Dijk</div>
+          <div class="text-gray-500 text-sm">Almelo</div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-[#F5F2EE]
+ rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-lg transition">
+          <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Klant" class="w-16 h-16 rounded-full mb-4 object-cover object-center border-2 border-[#9C8468]">
+          <div class="flex items-center justify-center mb-2">
+            <div class="flex items-center justify-center mb-2">
+              <!-- 5 sterren -->
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <polygon points="9.9,1.1 7.6,6.6 1.6,7.6 6,11.9 4.8,17.8 9.9,14.7 15,17.8 13.8,11.9 18.2,7.6 12.2,6.6" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            “Goede communicatie en snelle levering. De monteurs waren vriendelijk en professioneel.”
+          </p>
+          <div class="font-semibold text-markant-dark">Erik Jansen</div>
+          <div class="text-gray-500 text-sm">Hengelo</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#F5F2EE] font-sans" id="contact">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-serif text-center mb-8 text-markant-dark tracking-tight">
+        Neem contact op
+      </h2>
+
+      <div class="bg-white rounded-xl shadow-md p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+
+        <!-- Linkerkant: tekst -->
+        <div class="flex-1 mb-8 md:mb-0">
+          <h3 class="text-xl font-serif text-markant-dark mb-4">Heb je een vraag of wil je een afspraak maken?</h3>
+          <p class="text-markant-dark/80 mb-4">
+            Vul het formulier in en wij nemen zo snel mogelijk contact met je op.
+            Je kunt ons ook direct mailen via
+            <a href="mailto:info@markantwonen.nl" class="text-[#9C8468] underline">info@markantwonen.nl</a><br>
+            of bellen op
+            <a href="tel:0742911199" class="text-[#9C8468] underline">074 291 11 99</a>.
+          </p>
+          <ul class="text-markant-dark/70 text-sm space-y-2">
+            <li>
+              <span class="font-semibold text-[#9C8468]">Adres:</span><br>
+              Beitelstraat 17<br>
+              7556 ND Hengelo (O)
+            </li>
+            <li>
+              <span class="font-semibold text-[#9C8468]">Openingstijden:</span><br>
+              Maandag: 13.00 - 18.00 uur<br>
+              Di t/m Vrij: 09.30 - 18.00 uur<br>
+              Zaterdag: 10.00 - 17.00 uur
+            </li>
+          </ul>
+        </div>
+
+        <!-- Rechterkant: formulier -->
+        <form action="https://formspree.io/f/yourformid" method="POST" class="flex-1 w-full max-w-md space-y-5">
+          <div>
+            <label for="naam" class="block text-markant-dark font-medium mb-1">Naam</label>
+            <input type="text" id="naam" name="naam" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9C8468]/40 transition" autocomplete="name">
+          </div>
+          <div>
+            <label for="email" class="block text-markant-dark font-medium mb-1">E-mail <span class="text-red-600">*</span></label>
+            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9C8468]/40 transition" autocomplete="email">
+          </div>
+          <div>
+            <label for="bericht" class="block text-markant-dark font-medium mb-1">Bericht</label>
+            <textarea id="bericht" name="bericht" rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#9C8468]/40 transition"></textarea>
+          </div>
+          <button type="submit" class="bg-[#9C8468] text-white px-4 py-2 rounded-lg font-semibold transition hover:bg-[#7e6c52]">
+            Verstuur bericht
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white font-sans" id="faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-900 tracking-tight">
+        Veelgestelde vragen
+      </h2>
+      <div class="space-y-4">
+        <!-- Vraag 1: standaard open -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="true" onclick="toggleFaq(0)">
+            <span class="font-semibold text-gray-900">Hoe kan ik een offerte aanvragen?</span>
+            <svg class="w-5 h-5 text-blue-700 transform rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 text-gray-700 block" id="faq-answer-0">
+            Je kunt eenvoudig een offerte aanvragen via het formulier op onze website of door contact op te nemen met onze winkel. Wij nemen zo snel mogelijk contact met je op om je wensen te bespreken.
+          </div>
+        </div>
+        <!-- Vraag 2 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(1)">
+            <span class="font-semibold text-gray-900">Bieden jullie ook inmeetservice aan?</span>
+            <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-1">
+            Ja, wij bieden een professionele inmeetservice aan. Onze specialisten komen bij je langs om alles nauwkeurig op te meten voor een perfect eindresultaat.
+          </div>
+        </div>
+        <!-- Vraag 3 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(2)">
+            <span class="font-semibold text-gray-900">Wat is de levertijd van mijn bestelling?</span>
+            <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-2">
+            De levertijd verschilt per product. Wij informeren je altijd vooraf over de verwachte levertijd en houden je op de hoogte van de status van je bestelling.
+          </div>
+        </div>
+        <!-- Vraag 4 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <button type="button" class="w-full flex justify-between items-center px-6 py-4 bg-[#f7f3ef] text-left focus:outline-none" aria-expanded="false" onclick="toggleFaq(3)">
+            <span class="font-semibold text-gray-900">Kan ik stalen aanvragen?</span>
+            <svg class="w-5 h-5 text-blue-700 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 text-gray-700 hidden" id="faq-answer-3">
+            Zeker! Je kunt gratis stalen aanvragen van onze vloer- en raambekleding, zodat je thuis rustig kunt vergelijken.
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    // Eenvoudige accordion functionaliteit
-    function toggleFaq(idx) {
-      for (let i = 0; i < 4; i++) {
-        const answer = document.getElementById('faq-answer-' + i);
-        const btn = answer.previousElementSibling;
-        const icon = btn.querySelector('svg');
-        if (i === idx) {
-          const isOpen = !answer.classList.contains('hidden');
-          answer.classList.toggle('hidden', isOpen ? true : false);
-          btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-          icon.classList.toggle('rotate-180', !isOpen);
-        } else {
-          answer.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          icon.classList.remove('rotate-180');
+    <script>
+      // Eenvoudige accordion functionaliteit
+      function toggleFaq(idx) {
+        for (let i = 0; i < 4; i++) {
+          const answer = document.getElementById('faq-answer-' + i);
+          const btn = answer.previousElementSibling;
+          const icon = btn.querySelector('svg');
+          if (i === idx) {
+            const isOpen = !answer.classList.contains('hidden');
+            answer.classList.toggle('hidden', isOpen ? true : false);
+            btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            icon.classList.toggle('rotate-180', !isOpen);
+          } else {
+            answer.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+            icon.classList.remove('rotate-180');
+          }
         }
       }
-    }
-    // Zet eerste vraag open bij laden
-    document.addEventListener('DOMContentLoaded', function() {
-      toggleFaq(0);
-    });
-  </script>
-</section>
-<section class="bg-green-700 py-10 font-sans">
-  <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div class="text-center md:text-left flex-1">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">
-        Profiteer nu van onze zomeractie!
-      </h2>
-      <p class="text-white text-lg">
-        Vul je e-mailadres in en ontvang <span class="font-semibold underline">10% korting</span> op je bestelling.
-      </p>
-    </div>
-    <form action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col sm:flex-row items-center gap-3 flex-1 max-w-md w-full">
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="Jouw e-mailadres"
-        class="w-full sm:w-auto flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        autocomplete="email"
-      >
-      <button
-        type="submit"
-        class="w-full sm:w-auto bg-white text-red-700 font-semibold px-6 py-2 rounded-lg shadow hover:bg-red-0 transition"
-      >
-        Ontvang korting
-      </button>
-    </form>
-  </div>
-</section>
-  <!-- Footer -->
-<footer class="bg-gray-900 text-gray-200 font-sans">
-  <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-between gap-8">
-    <!-- Logo & Bedrijfsinfo -->
-    <div class="flex-1 min-w-[200px]">
-      <img src="logo markant.png" alt="Markant Wonen logo" class="h-10 mb-4">
-      <p class="text-gray-400 text-sm mb-2">Beitelstraat 17 <br>7556 ND Hengelo (O)</p>
-      <p class="text-gray-400 text-sm mb-2">T: <a href="tel:074-2911199" class="hover:underline">074-291 11 99</a></p>
-      <p class="text-gray-400 text-sm mb-4">E: <a href="mailto:info@markantwonen.nl" class="hover:underline">info@markantwonen.nl</a></p>
-      <div class="text-gray-400 text-sm">
-        <span class="font-semibold text-gray-200">Openingstijden:</span><br>
-        Maandag: 13.00 - 18.00 uur<br>
-        Di t/m Vrij: 09.30 - 18.00 uur<br>
-        Zaterdag: 10.00 - 17.00 uur
+      // Zet eerste vraag open bij laden
+      document.addEventListener('DOMContentLoaded', function() {
+        toggleFaq(0);
+      });
+    </script>
+  </section>
+  <section class="bg-[#F5F2EE] py-10 font-sans">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left flex-1">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#9c8468] mb-2">
+          Profiteer nu van onze zomeractie!
+        </h2>
+        <p class="text-[#9c8468] text-lg">
+          Vul je e-mailadres in en ontvang <span class="font-semibold underline">10% korting</span> op je bestelling.
+        </p>
       </div>
-    </div>
-    <!-- Navigatie -->
-    <div class="flex-1 min-w-[200px]">
-      <h3 class="text-white font-semibold mb-4">Navigatie</h3>
-      <ul class="space-y-2">
-        <li>
-          <a href="https://markantwonen.nl/vloerbedekking" class="hover:text-white transition" target="_blank" rel="noopener">Vloerbedekking</a>
-        </li>
-        <li>
-          <a href="https://markantwonen.nl/raambekleding" class="hover:text-white transition" target="_blank" rel="noopener">Raambekleding</a>
-        </li>
-        <li>
-          <a href="https://markantwonen.nl/projecten" class="hover:text-white transition" target="_blank" rel="noopener">Projecten</a>
-        </li>
-        <li>
-          <a href="https://markantwonen.nl/faq" class="hover:text-white transition" target="_blank" rel="noopener">Veelgestelde vragen</a>
-        </li>
-        <li>
-          <a href="https://markantwonen.nl/contact" class="hover:text-white transition" target="_blank" rel="noopener">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Service info -->
-    <div class="flex-1 min-w-[200px]">
-      <h3 class="text-white font-semibold mb-4">Service</h3>
-      <ul class="space-y-2">
-        <li><a href="https://markantwonen.nl/levering-montage" class="hover:text-white transition" target="_blank" rel="noopener">Levering & montage</a></li>
-        <li><a href="https://markantwonen.nl/garantie" class="hover:text-white transition" target="_blank" rel="noopener">Garantie</a></li>
-        <li><a href="https://markantwonen.nl/stalen-aanvragen" class="hover:text-white transition" target="_blank" rel="noopener">Stalen aanvragen</a></li>
-        <li><a href="https://markantwonen.nl/offerte" class="hover:text-white transition" target="_blank" rel="noopener">Offerte aanvragen</a></li>
-      </ul>
-    </div>
-    <!-- Socials & Nieuwsbrief -->
-    <div class="flex-1 min-w-[200px]">
-      <h3 class="text-white font-semibold mb-4">Volg ons</h3>
-      <div class="flex space-x-4 mb-4">
-        <a href="https://www.facebook.com/markantwonen" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-blue-400 transition">
-          <!-- Facebook icoon -->
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12"></path></svg>
-        </a>
-        <a href="https://www.instagram.com/markantwonen" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-pink-400 transition">
-          <!-- Instagram icoon -->
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.059 1.282.292 2.394 1.272 3.374.98.98 2.092 1.213 3.374 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.059 2.394-.292 3.374-1.272.98-.98 1.213-2.092 1.272-3.374.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.059-1.282-.292-2.394-1.272-3.374-.98-.98-2.092-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-        </a>
-        <a href="https://www.pinterest.com/markantwonen" target="_blank" rel="noopener" aria-label="Pinterest" class="hover:text-red-400 transition">
-          <!-- Pinterest icoon -->
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.004 2.003c-5.514 0-9.997 4.484-9.997 9.997 0 4.418 2.865 8.166 6.885 9.489-.095-.807-.18-2.047.037-2.929.197-.807 1.267-5.145 1.267-5.145s-.323-.646-.323-1.602c0-1.501.87-2.624 1.953-2.624.92 0 1.364.691 1.364 1.52 0 .926-.591 2.309-.895 3.594-.255 1.08.54 1.96 1.601 1.96 1.922 0 3.399-2.027 3.399-4.951 0-2.588-1.861-4.399-4.521-4.399-3.082 0-4.892 2.308-4.892 4.693 0 .929.357 1.928.803 2.47.089.108.102.202.075.31-.082.338-.267 1.08-.303 1.229-.048.197-.157.239-.364.145-1.353-.627-2.197-2.594-2.197-4.176 0-3.401 2.47-6.527 7.104-6.527 3.729 0 6.626 2.656 6.626 6.207 0 3.701-2.33 6.682-5.567 6.682-1.113 0-2.16-.579-2.517-1.236l-.684 2.604c-.197.755-.583 1.701-.868 2.277.653.202 1.342.312 2.062.312 5.513 0 9.997-4.484 9.997-9.997 0-5.513-4.484-9.997-9.997-9.997z"/></svg>
-        </a>
-      </div>
-      <h3 class="text-white font-semibold mb-2">Nieuwsbrief</h3>
-      <form action="https://formspree.io/f/yourformid" method="POST" class="flex gap-2">
-        <input type="email" name="email" required placeholder="Jouw e-mailadres" class="px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900" autocomplete="email">
-        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-800 transition">Aanmelden</button>
+      <form action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col sm:flex-row items-center gap-3 flex-1 max-w-md w-full">
+        <input type="email" name="email" required placeholder="Jouw e-mailadres" class="w-full sm:w-auto flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300" autocomplete="email">
+        <button type="submit" class="w-full sm:w-auto bg-white text-[#9c8468] font-semibold px-6 py-2 rounded-lg shadow transition hover:bg-[#9c8468] hover:text-white">
+          Ontvang korting
+        </button>
+
       </form>
     </div>
-  </div>
-  <!-- Gecentreerde copyright onderaan -->
-  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm w-full">
-    &copy; 2025 Markant Wonen. Alle rechten voorbehouden.
-  </div>
-</footer>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200 font-sans">
+    <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row md:justify-between gap-8">
+      <!-- Logo & Bedrijfsinfo -->
+      <div class="flex-1 min-w-[200px]">
+        <img src="logo markant.png" alt="Markant Wonen logo" class="h-10 mb-4">
+        <p class="text-gray-400 text-sm mb-2">Beitelstraat 17 <br>7556 ND Hengelo (O)</p>
+        <p class="text-gray-400 text-sm mb-2">T: <a href="tel:074-2911199" class="hover:underline">074-291 11 99</a></p>
+        <p class="text-gray-400 text-sm mb-4">E: <a href="mailto:info@markantwonen.nl" class="hover:underline">info@markantwonen.nl</a></p>
+        <div class="text-gray-400 text-sm">
+          <span class="font-semibold text-gray-200">Openingstijden:</span><br>
+          Maandag: 13.00 - 18.00 uur<br>
+          Di t/m Vrij: 09.30 - 18.00 uur<br>
+          Zaterdag: 10.00 - 17.00 uur
+        </div>
+      </div>
+      <!-- Navigatie -->
+      <div class="flex-1 min-w-[200px]">
+        <h3 class="text-white font-semibold mb-4">Navigatie</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="https://markantwonen.nl/vloerbedekking" class="hover:text-white transition" target="_blank" rel="noopener">Vloerbedekking</a>
+          </li>
+          <li>
+            <a href="https://markantwonen.nl/raambekleding" class="hover:text-white transition" target="_blank" rel="noopener">Raambekleding</a>
+          </li>
+          <li>
+            <a href="https://markantwonen.nl/projecten" class="hover:text-white transition" target="_blank" rel="noopener">Projecten</a>
+          </li>
+          <li>
+            <a href="https://markantwonen.nl/faq" class="hover:text-white transition" target="_blank" rel="noopener">Veelgestelde vragen</a>
+          </li>
+          <li>
+            <a href="https://markantwonen.nl/contact" class="hover:text-white transition" target="_blank" rel="noopener">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Service info -->
+      <div class="flex-1 min-w-[200px]">
+        <h3 class="text-white font-semibold mb-4">Service</h3>
+        <ul class="space-y-2">
+          <li><a href="https://markantwonen.nl/levering-montage" class="hover:text-white transition" target="_blank" rel="noopener">Levering & montage</a></li>
+          <li><a href="https://markantwonen.nl/garantie" class="hover:text-white transition" target="_blank" rel="noopener">Garantie</a></li>
+          <li><a href="https://markantwonen.nl/stalen-aanvragen" class="hover:text-white transition" target="_blank" rel="noopener">Stalen aanvragen</a></li>
+          <li><a href="https://markantwonen.nl/offerte" class="hover:text-white transition" target="_blank" rel="noopener">Offerte aanvragen</a></li>
+        </ul>
+      </div>
+      <!-- Socials & Nieuwsbrief -->
+      <div class="flex-1 min-w-[200px]">
+        <h3 class="text-white font-semibold mb-4">Volg ons</h3>
+        <div class="flex space-x-4 mb-4">
+          <a href="https://www.facebook.com/markantwonen" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-blue-400 transition">
+            <!-- Facebook icoon -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/markantwonen" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-pink-400 transition">
+            <!-- Instagram icoon -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.059 1.282.292 2.394 1.272 3.374.98.98 2.092 1.213 3.374 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.282-.059 2.394-.292 3.374-1.272.98-.98 1.213-2.092 1.272-3.374.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.059-1.282-.292-2.394-1.272-3.374-.98-.98-2.092-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+            </svg>
+          </a>
+          <a href="https://www.pinterest.com/markantwonen" target="_blank" rel="noopener" aria-label="Pinterest" class="hover:text-red-400 transition">
+            <!-- Pinterest icoon -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.004 2.003c-5.514 0-9.997 4.484-9.997 9.997 0 4.418 2.865 8.166 6.885 9.489-.095-.807-.18-2.047.037-2.929.197-.807 1.267-5.145 1.267-5.145s-.323-.646-.323-1.602c0-1.501.87-2.624 1.953-2.624.92 0 1.364.691 1.364 1.52 0 .926-.591 2.309-.895 3.594-.255 1.08.54 1.96 1.601 1.96 1.922 0 3.399-2.027 3.399-4.951 0-2.588-1.861-4.399-4.521-4.399-3.082 0-4.892 2.308-4.892 4.693 0 .929.357 1.928.803 2.47.089.108.102.202.075.31-.082.338-.267 1.08-.303 1.229-.048.197-.157.239-.364.145-1.353-.627-2.197-2.594-2.197-4.176 0-3.401 2.47-6.527 7.104-6.527 3.729 0 6.626 2.656 6.626 6.207 0 3.701-2.33 6.682-5.567 6.682-1.113 0-2.16-.579-2.517-1.236l-.684 2.604c-.197.755-.583 1.701-.868 2.277.653.202 1.342.312 2.062.312 5.513 0 9.997-4.484 9.997-9.997 0-5.513-4.484-9.997-9.997-9.997z" />
+            </svg>
+          </a>
+        </div>
+        <h3 class="text-white font-semibold mb-2">Nieuwsbrief</h3>
+        <form action="https://formspree.io/f/yourformid" method="POST" class="flex gap-2">
+          <input type="email" name="email" required placeholder="Jouw e-mailadres" class="px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900" autocomplete="email">
+          <button type="submit" class="bg-[#9c8468] text-white px-4 py-2 rounded-lg font-semibold transition hover:bg-[#7e6c52]">
+            Aanmelden
+          </button>
+
+        </form>
+      </div>
+    </div>
+    <!-- Gecentreerde copyright onderaan -->
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm w-full">
+      &copy; 2025 Markant Wonen. Alle rechten voorbehouden.
+    </div>
+  </footer>
 </body>
 
 </html>
